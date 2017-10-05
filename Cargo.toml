@@ -2,10 +2,8 @@
 name = "iswow64"
 version = "0.1.0"
 authors = ["WLBF <lbf1353@live.com>"]
-build = "build.rs"
 
-[dependencies]
-cpp = "0.3"
+[target.'cfg(windows)'.dependencies]
+winapi = "0.2.8"
+kernel32-sys = "0.2.2"
 
-[build-dependencies]
-cpp_build = "0.3"
