@@ -57,3 +57,19 @@ pub fn iswow64() -> Result<bool, &'static str>{
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn iswow64_test() {
+        let result = iswow64();
+
+        #[cfg(target_arch = "x86")]
+        assert_eq!(result.unwrap(), true);
+
+        #[cfg(target_arch = "x86_64")]
+        assert_eq!(result.unwrap(), false);
+    }
+}
