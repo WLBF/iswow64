@@ -2,6 +2,15 @@
 name = "iswow64"
 version = "0.1.0"
 authors = ["WLBF <lbf1353@live.com>"]
+license = "MIT"
+description = "Determines whether the current process is running under WOW64."
+repository = "https://github.com/WLBF/iswow64"
+readme = "README.md"
+keywords = ["Windows"]
+include = [
+    "src/*.rs",
+    "Cargo.toml",
+]
 
 [target.'cfg(windows)'.dependencies]
 winapi = "0.2.8"
