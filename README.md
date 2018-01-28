@@ -4,7 +4,7 @@ iswow64 [![Crates.io](https://img.shields.io/crates/v/iswow64.svg)](https://crat
 Determines whether the current process is running under WOW64.
 ## Example:
 
-``` norun
+```rust
 extern crate iswow64;
 
 let result = iswow64::iswow64();

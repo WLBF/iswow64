@@ -2,7 +2,7 @@
 //!
 //! # Example:
 //!
-//! ```
+//! ```rust
 //! extern crate iswow64;
 //!
 //! let result = iswow64::iswow64();
