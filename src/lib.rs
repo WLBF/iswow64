@@ -19,14 +19,17 @@
 
 #[cfg(windows)]
 extern crate winapi;
-#[cfg(windows)]
-extern crate kernel32;
 
-use winapi::BOOL;
-use kernel32::{IsWow64Process, GetCurrentProcess, GetLastError};
+use winapi::{
+    shared::minwindef::BOOL,
+    um::{
+        errhandlingapi::GetLastError, processthreadsapi::GetCurrentProcess,
+        wow64apiset::IsWow64Process,
+    },
+};
 
 #[cfg(windows)]
-pub fn iswow64() -> Result<bool, u32>{
+pub fn iswow64() -> Result<bool, u32> {
     let mut is_wow64: BOOL = 0;
     unsafe {
         match IsWow64Process(GetCurrentProcess(), &mut is_wow64) {
